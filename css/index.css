@@ -1,0 +1,316 @@
+.banner{
+    width: 100%;
+    height: 375px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 1px 2px #4c494b;
+}
+body{
+    background-color: #2d2a2c;
+}
+.banner .slide{
+    height: 280px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 0;
+}
+.slide>a{
+    position: relative;
+    display: inline-block;
+    width: 230px;
+    height: 240px;
+    top: 20px;
+    z-index: 4;
+}
+.slide>a:last-of-type{
+    left: 636px;
+}
+.slide:hover .btnL,
+.slide:hover .btnR{
+    display: block;
+}
+.slide>a .btnL,
+.slide>a .btnR{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 100px;
+    transform: translate(-50%,-50%);
+    opacity: .6;
+    z-index: 5;
+    background: url(../images/slideBtn.png) no-repeat;
+}
+.slide>a .btnR{
+    background-position: -50px 0;
+}
+.slide .box0{
+    width: 640px;
+    height: 280px;
+    z-index: 5;
+    left: 230px;
+    top: 0;
+    opacity: 1;   
+}
+.slide .box1{
+    width: 549px;
+    height: 240px;
+    z-index: 1;
+    left: 0;
+    top: 20px;
+    opacity: 1;
+}
+.slide .box2,
+.slide .box3{
+    width: 412px;
+    height: 180px;
+    z-index: 1;
+    left: 0;
+    top: 60px;
+    opacity: 0;
+}
+.slide .box4{
+    width: 549px;
+    height: 240px;
+    z-index: 3;
+    left: 550px;
+    top: 20px;
+    opacity: 1;
+}
+.slide li{
+    position: absolute;
+    background: #333d46;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,.15);
+    transition: all 1s;
+}
+.slide li em{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #000;
+    opacity: 0.4;
+    color: #fff;
+}
+.slide li img{
+    height: 100%;
+}
+.slide li p{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    background: rgba(0,0,0,.7);
+    color: #fff;
+    padding-left: 38px;
+    line-height: 50px;
+    font-size: 25px;
+}
+#reflect{
+    width: 670px;
+    height: 280px;
+    position: absolute;
+    left: 0px;
+    top: 280px;
+    opacity: .2;
+    transform: scaleY(-1);
+}
+.slide .box0 em{
+    opacity: 0;
+}
+.slide .box0 p{
+    bottom: 0;
+}
+.slide .btn-list{
+    text-align: center;
+    position: relative;
+    left: 0;
+    top: 40px;
+    z-index: 10;
+}
+.slide .btn-list span{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 15px 5px;
+    background: #787d82;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slide .btn-list .current{
+    background-color: #ffae00;
+}
+.newsongs,
+.hotrecommend{
+    width: 1100px;
+    overflow: hidden;
+    margin: 35px auto 0 auto;
+    background-color: rgb(41, 35, 35);
+    border-top: 1px solid rgb(64, 39, 53);
+}
+.hotrecommend{
+    height: 332px;
+}
+.title{
+    height: 35px;
+    width: 100%;
+    border-bottom: 1px solid rgb(32, 22, 22);   
+    background: rgb(46, 41, 41);
+}
+.title .name{
+    color: #6a4777de;
+    font-size: 18px;
+    float: left;
+    margin-top: 8px;
+}
+.hotrecommend .title .tab{
+    float: right;
+}
+.hotrecommend .title .tab li{
+    float: left;
+}
+.hotrecommend .title .tab .bord{
+    border-right: 1px solid #999;
+    height: 14px;
+    margin: 10px 8px 0 8px;
+}
+.hotrecommend .title .tab li span{
+    height: 14px;
+    display: block;
+    margin-top: 11px;
+    line-height: 12px;
+    color: #a8b9af;
+    font-size: 14px;
+    cursor: pointer;
+}
+.hotrecommend .contain dl{
+    width: 1100px;
+    height: 295px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+.hotrecommend .contain dl dt{
+    width: 200px;
+    height: 129px;
+    position: relative;
+}
+.hotrecommend .contain dl dt img{
+    width: 100%;
+    height: 100%;
+}
+.hotrecommend .contain dl dt strong{
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    color: #f1e4efbd;
+    font-size: 12px;
+}
+.hotrecommend .contain dl dt a{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+}
+.hotrecommend .contain dl dt:hover a{
+    display: block;
+}
+.hotrecommend .contain dl dt a:hover .play{
+    transform: rotate(720deg);
+    transform-origin: 50%;
+}
+.hotrecommend .contain dl dt a span{
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+}
+.hotrecommend .contain dl dt a .play{
+    font-family: 'icomoon';
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin : -25px 0 0 -25px;
+    transition: all .6s;
+}
+.hotrecommend .contain dl dt a .inf{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 90%;
+}
+.hotrecommend .contain dl dt a .inf i{
+    display: block;
+    float: right;
+}
+.hotrecommend .contain dl dt a .inf i:first-of-type{
+    float: left;
+}
+.hotrecommend .contain dl dt a .inf i:first-of-type::before{
+    content: "";
+    font-family: 'icomoon';
+}
+.title span{
+    float: right;
+    height: 14px;
+    display: block;
+    margin-top: 11px;
+    line-height: 12px;
+    color: #a8b9af;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.newsongs{
+    position: relative;
+}
+.newsongs .btnL,
+.newsongs .btnR{
+    position: absolute;
+}
+body{
+    height: 2000px;
+}
+.newsongs .box{
+    width: 1000px;
+    margin: 30px auto;
+}
+.newsongs ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 28px;
+}
+.newsongs li{
+    width: 190px;
+}
+.newsongs li span{
+    color: #e8e8e8;
+    font-size: 14px;
+    display: block;
+    margin: 15px 0 6px 0;
+}
+.newsongs li em{
+    color: #9b9b9b;
+    font-size: 14px;
+}
+.newsongs li img{
+    width: 100%;
+}

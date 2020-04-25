@@ -1,0 +1,476 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?6yv66i');
+    src:  url('../fonts/icomoon.eot?6yv66i#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?6yv66i') format('truetype'),
+      url('../fonts/icomoon.woff?6yv66i') format('woff'),
+      url('../fonts/icomoon.svg?6yv66i#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+em,i{
+    font-style: normal;
+}
+strong{
+    font-weight: 400;
+}
+li{
+    list-style:none;
+}
+img{
+    border:0;
+    vertical-align: middle;
+}
+a{
+    color:#4d4d4d;
+    text-decoration: none;
+    cursor: pointer;
+}
+button{
+    cursor: pointer;
+}
+body{
+    font-size: 12px;
+}
+input{
+    outline: none;
+}
+.w{
+    width: 1100px;
+    margin:0 auto;
+}
+.clear::after{
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    clear: both;
+}
+.header-top{
+    position: relative;
+    z-index: 100;
+    height: 70px;
+    background: #242424;
+    border-bottom: 1px solid #000;
+}
+.header-top .logo a{
+    display: block;
+    float: left;
+    width: 176px;
+    height: 70px;
+    background-position: 0 0;
+    background: url(../images/topbar.png) no-repeat;
+}
+.m-top .logo, .m-nav .cor, .m-nav .hot, .m-srch .srchbg, .m-mail, .m-tophead, .m-topvd {
+    background: url(../images/topbar.png) no-repeat 0 9999px;
+}
+.header-top .nav{
+    float: left;
+    height: 100%;
+}
+.header-top .nav li{
+    float: left;
+    height: 100%;
+    text-align: center;
+    position: relative;
+}
+.header-top .nav li:hover .contain{
+    display: block;
+}
+.header-top .nav li .contain{
+    display: none;
+    position: absolute;
+    height: 35px;
+    top: 70px;
+    width: 1100px;
+    background-color: rgb(49, 54, 61);
+    left: -180px;
+    padding: 0 170px;
+}
+.header-top .nav li .contain::before{
+    content: '';
+    border-bottom: 8px solid rgb(49, 54, 61);
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    position: absolute;
+    top: -5px;
+    left: 220px;
+}
+.header-top .nav li dl{
+    width: 570px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header-top .nav li dl dt a{
+    padding: 0 10px;
+    display: block;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+.header-top .nav li:last-child::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 21px;
+    left: 100px;
+    width: 28px;
+    height: 19px;
+    background: url(../images/topbar.png) no-repeat;
+    background-position: -190px 0;
+}
+.header-top .nav li a{
+    display: block;
+    height: 100%;
+    font-size: 14px;
+    color: #cccccc;
+    line-height: 70px;
+    padding: 0 19px;
+}
+.header-top .nav li a:hover{
+    background: #000;
+    color: #fff;
+}
+.header-top .nav li .current{
+    background: #000;
+    color: #fff;
+}
+.header-top .search{
+    float: right;
+    position: relative;
+    width: 158px;
+    min-height: 32px;
+    margin-top: 19px;
+    padding: 0 10px;
+    border-radius: 32px;
+    background-color: #fff;
+    line-height: 32px;
+}
+.header-top .search::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    height: 30px;
+    width: 30px;
+    background: url(../images/topbar.png) no-repeat;
+    background-position: 0 -99px;
+}
+.header-top .search input{
+    font-size: 12px;
+    border: none;
+    width: 80%;
+    overflow: hidden;
+    margin-left: 20px;
+}
+.header-top .creation{
+    float: right;
+    margin: 19px 0 0 12px;
+}
+.header-top .creation a{
+    display: block;
+    width: 90px;
+    height: 32px;
+    padding-left: 15px;
+    overflow: hidden;
+    border: 1px solid #4f4f4f;
+    line-height: 32px;
+    color: #cccccc;
+    border-radius: 20px;
+}
+.header-top .creation a:hover{
+    color: #fff;
+    border: 1px solid #ccc;
+}
+.header-top .login{
+    float: right;
+    height: 70px;
+    margin: 0 20px;
+    line-height: 70px;
+}
+.header-top .login a{
+    color: #787878;
+}
+.header-top .login a:hover{
+    color: #999;
+    text-decoration: underline;
+}
+.header-top .login .bg{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 15,0.7);
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.header-top .login .contain{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 514px;
+    height: 420px;
+    border: 2px solid rgb(51, 51, 51);
+    background-color: rgb(1, 1, 1);
+    z-index: 101;
+    padding: 35px 20px;
+}
+.header-top .login .contain .close{
+    font-family: 'icomoon';
+    position: absolute;
+    color: #fff;
+    top: -30px;
+    right: -40px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    text-decoration: none;
+}
+.header-top .login .contain h2{
+    color: #fff;
+    font-size: 30px;
+    line-height: 1em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.header-top .login .contain input{
+    background-color: rgb(1, 1, 1);
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    width: 470px;
+    height: 46px;
+    font-size: 15px;
+    color: #fff;
+    padding-left: 15px;
+    border-radius: 3px;
+}
+.header-top .login .contain .btns{
+    margin-top: 12px;
+}
+.header-top .login .contain button{
+    color: rgb(204, 204, 204);
+    background-color: rgb(47, 47, 47);
+    border: 0;
+    outline: none;
+    height: 56px;
+    width: 302px;
+    text-align: center;
+    border-radius: 3px;
+    line-height: 56px;
+    font-size: 15px;
+    margin-right: 20px;   
+}
+.header-top .login .contain button:hover{
+    color: #fff;
+}
+.header-top .login .contain .btns span{
+    font-size: 15px;
+    color: #fff;
+}
+.header-top .login .contain .btns span a{
+    margin-left: 8px;
+    color: rgb(255, 153, 0);
+}
+.header-top .login .contain p{
+    color: #fff;
+}
+.header-top .login .contain p a{
+    color: rgb(255, 153, 0);
+    text-decoration: none;
+}
+.info{
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+}
+.info .btns{
+    line-height: 50px;
+    float: left;
+}
+.info .btns button{
+    font-family: 'icomoon';
+    color: #fff;
+    background-color: #000;
+    border: 0;
+    outline: none;
+    vertical-align: middle;
+}
+.info .btns .previous,
+.info .btns .next{
+    font-size: 30px;
+}
+.info .btns .pause{
+    background: url(../images/playbar.png) no-repeat;
+    background-position: -40px -204px;
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+}
+.info .play{
+    width: 666px;
+    float: left;
+    margin-left: 50px;
+}
+.info .play .img{
+    width: 35px;
+    float: left;
+    height: 35px;
+    margin: 8px 18px 0 0;
+    background-color: #fff;
+}
+.info .play img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;  
+}
+.info .play .musicinfo{
+    float: left;
+    width: 608px;
+}
+.info .play .musicinfo .name{
+    height: 28px;
+    line-height: 28px;
+}
+.info .play .musicinfo .name .songsname{
+    font-size: 12px;
+    color: #e8e8e8;
+}
+.info .play .musicinfo .name .author{
+    color: #9b9b9b;
+    margin-left: 15px;
+}
+.info .play .musicinfo .outbox{
+    height: 9px;
+    width: 493px;
+    background: url(../images/progressbar.png) no-repeat;
+    background-position: left -30px;
+    cursor: pointer;
+}
+.info .play .musicinfo .outbox .slide{
+    width: 30%;
+    height: 100%;
+    background: url(../images/progressbar.png) no-repeat;
+    background-position: left -66px;
+    position: relative;
+}
+.info .play .musicinfo .outbox .slide span{
+    background: url(../images/iconall.png) no-repeat;
+    background-position: 0 -250px;
+    display: block;
+    height: 24px;
+    width: 22px;
+    position: absolute;
+    top: -7px;
+    right: -13px;
+    margin-left: -11px;
+}
+.info .play .musicinfo .progressbar .time{
+    position: absolute;
+    top: 23px;
+    right: 694px;
+    color: #797979;
+}
+.info .volume{
+    position: relative;
+    float: right;
+    width: 25px;
+    height: 25px;
+    margin: 15px 2px 0 0;
+    background: url(../images/playbar.png);
+    background-position: -2px -248px;
+    cursor: pointer;
+}
+.info .volume .box{
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    left: -3px;
+    width: 32px;
+    height: 128px;
+    background-color: #000;
+}
+.info .volume:hover .box{
+    display: block;
+}
+.info .volume .box .outbox{
+    width: 4px;
+    height: 93px;
+    position: absolute;
+    bottom: 23px;
+    left: 50%;
+    margin-left: -2px;
+    cursor: pointer;
+}
+.info .volume .box .outbox .slide{
+    position: relative;
+    border-radius: 2px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(119, 12, 12);
+} 
+.info .volume .box .outbox span{
+    position: absolute;
+    left: -7px;
+    display: block;
+    width: 18px;
+    height: 20px;
+    background: url(../images/iconall.png) no-repeat;
+    background-position: -40px -250px;
+}
+.info .lock{
+    position: absolute;
+    top: -14px;
+    right: 15px;
+    background: url(../images/playbar.png) no-repeat;
+    background-position: 0 -387px;
+    width: 52px;
+    height: 13px;
+}
+.info .lock a{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0 16px;
+    background: url(../images/playbar.png) no-repeat;
+    background-position: -100px -380px;
+}
+.info .otherbtns{
+    float: right;
+}
+.info .otherbtns a{
+    display: block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 15px 10px;
+    background: url(../images/playbar.png);
+}
+.info .otherbtns a:first-child{
+    background-position: -88px -163px;
+}
+.info .otherbtns a:nth-child(2){
+    background-position: -3px -344px;
+}
+.info .otherbtns a:nth-child(3){
+    background-position: -42px -68px;
+}
+.info .otherbtns a:last-child{
+    background-position: -114px -163px;
+}
