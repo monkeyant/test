@@ -1,17 +1,12 @@
 .banner{
     width: 100%;
     height: 375px;
-    position: relative;
-    margin: 0 auto;
+    margin: 110px auto 0 auto;
     overflow: hidden;
     box-shadow: 0 1px 2px #4c494b;
 }
-body{
-    background-color: #2d2a2c;
-}
 .banner .slide{
     height: 280px;
-    margin-top: 40px;
     position: relative;
     z-index: 0;
 }
@@ -156,6 +151,7 @@ body{
 }
 .hotrecommend{
     height: 332px;
+    position: relative;
 }
 .title{
     height: 35px;
@@ -180,7 +176,7 @@ body{
     height: 14px;
     margin: 10px 8px 0 8px;
 }
-.hotrecommend .title .tab li span{
+.hotrecommend .title .tab li em{
     height: 14px;
     display: block;
     margin-top: 11px;
@@ -188,6 +184,16 @@ body{
     color: #a8b9af;
     font-size: 14px;
     cursor: pointer;
+}
+.hotrecommend .contain{
+    position: absolute;
+    top: 35px;
+    left: 0;
+    display: none;
+}
+.hotrecommend .current{
+    display: block;
+    z-index: 1;
 }
 .hotrecommend .contain dl{
     width: 1100px;
@@ -233,6 +239,7 @@ body{
 }
 .hotrecommend .contain dl dt a span{
     color: #fff;
+    display: block;
     font-size: 12px;
     margin: 0;
 }
@@ -249,24 +256,14 @@ body{
     margin : -25px 0 0 -25px;
     transition: all .6s;
 }
-.hotrecommend .contain dl dt a .inf{
+.hotrecommend .contain dl dt a i{
     position: absolute;
+    display: block;
     bottom: 5px;
     left: 5px;
     width: 90%;
 }
-.hotrecommend .contain dl dt a .inf i{
-    display: block;
-    float: right;
-}
-.hotrecommend .contain dl dt a .inf i:first-of-type{
-    float: left;
-}
-.hotrecommend .contain dl dt a .inf i:first-of-type::before{
-    content: "";
-    font-family: 'icomoon';
-}
-.title span{
+.title em{
     float: right;
     height: 14px;
     display: block;
@@ -279,13 +276,6 @@ body{
 }
 .newsongs{
     position: relative;
-}
-.newsongs .btnL,
-.newsongs .btnR{
-    position: absolute;
-}
-body{
-    height: 2000px;
 }
 .newsongs .box{
     width: 1000px;
@@ -311,6 +301,163 @@ body{
     color: #9b9b9b;
     font-size: 14px;
 }
+.newsongs li .img{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 190px;
+}
+.newsongs li .img a,
+.newsongs li .img span{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    opacity: 0;
+    transition: all 0.3s;
+}
+.newsongs li .img span{
+    background-color: rgb(0, 0, 0);
+}
+.newsongs li .img a{
+    background: url(../images/play.png) no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+.newsongs li .img:hover a{
+    opacity: 1;
+}
+.newsongs li .img:hover span{
+    opacity: 0.4;
+}
+.newsongs li .img:hover img{
+    transform: scale(1.07);
+}
 .newsongs li img{
     width: 100%;
+    height: 100%;
+}
+.leaderBoard{
+    margin: 35px auto 35px auto;
+    width: 1100px;
+}
+.leaderBoard .contain{
+    padding: 30px 0;
+    background-color: rgb(41, 35, 35);
+}
+.leaderBoard .contain ul{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.leaderBoard .contain ul .board-list{
+    width: 25%;
+    height: 568px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+.leaderBoard .contain ul .board-list:hover>span{
+    opacity: 0.4;
+}
+.leaderBoard .contain ul .board-list:hover a{
+    opacity: 1;
+}
+.leaderBoard .contain ul .board-list:hover .bg{
+    transform: scale(1.07);
+}
+.leaderBoard .contain ul .board-list .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/leaderBoard.jpg) no-repeat;
+    transition: all 0.3s;
+}
+.leaderBoard .contain ul .board-list>span{
+    background-color: rgba(0, 0, 0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;   
+    transition: all 0.3s;
+}
+.leaderBoard .contain ul .board-list a{
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.3s;
+    background: url(../images/play.png) no-repeat;
+    background-position: center 185px;
+}
+.leaderBoard .contain ul .board-list:first-child .bg{
+    background-position: 0 0;
+}
+.leaderBoard .contain ul .board-list:nth-child(2) .bg{
+    background-position: -300px 1px;
+}
+.leaderBoard .contain ul .board-list:nth-child(3) .bg{
+    background-position: -600px 1px;
+}
+.leaderBoard .contain ul .board-list:nth-child(4) .bg{
+    background-position: -900px 1px;
+}
+.leaderBoard .contain ul .board-list .head{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    text-align: center;
+    z-index: 1;
+}
+.leaderBoard .contain ul .board-list .head span{
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 22px;
+    font-size: 20px;
+    color: #fff;
+}
+.leaderBoard .contain ul .board-list .head em{
+    font-size: 34px;
+    margin-top: 10px;
+    display: block;
+}
+.leaderBoard .contain ul .board-list .head i{
+    position: absolute;
+    top: 135px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 62px;
+    height: 2px;
+    background: rgba(255, 255, 255, .3);
+}
+.leaderBoard .contain ul .board-list ol{
+    position: absolute;
+    left: 56px;
+    bottom: 40px;
+    z-index: 1;
+}
+.leaderBoard .contain ul .board-list li{
+    height: 45px;
+    margin-top: 10px;
+}
+.leaderBoard .contain ul .board-list li p{
+    font-size: 16px;
+}
+.leaderBoard .contain ul .board-list li p i{
+    padding-right: 6px;
+    font-size: 14px;
+}
+.leaderBoard .contain ul .board-list li span{
+    padding-left: 15px;
+    line-height: 30px;
+    color: rgba(255,255,255,.5);
 }

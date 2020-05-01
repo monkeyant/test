@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/common.css">
-    <title>Document</title>
+    <script src="js/ajax.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/index.js"></script>
+    <title>Document</title>
 </head>
+
 <body>
     <div class="header-top">
         <div class="w">
             <h1 class="logo"><a href="#"></a></h1>
             <div class="nav">
                 <ul>
-                    <li>
-                        <a href="javascript:;" class="current">发现音乐</a>
+                    <li class="current">
+                        <a href="javascript:;">发现音乐</a>
                         <div class="contain">
                             <dl>
                                 <dt><a href="javascript:;" class="current">推荐</a></dt>
@@ -27,7 +31,7 @@
                             </dl>
                         </div>
                     </li>
-                    <li><a href="javascript:;">我的音乐</a></li>
+                    <li><a href="http://localhost/list.html">我的音乐</a></li>
                     <li><a href="javascript:;">朋友</a></li>
                     <li><a href="javascript:;">商城</a></li>
                     <li><a href="javascript:;">音乐人</a></li>
@@ -38,17 +42,30 @@
             </div>
             <div class="login">
                 <a href="javascript:;">登录</a>
+                <div class="avatar">
+                    <img src="images/coverall.png" alt="">
+                    <ul>
+                        <li class="logout">
+                            <a href="javascript:;">
+                                <em></em>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
                 <div class="bg"></div>
                 <div class="contain">
                     <h2>手机号登录</h2>
                     <article>
                         <input type="text" placeholder="请输入手机号" name="phone" autocomplete="off">
-                        <input type="text" placeholder="请输入密码" name="password" autocomplete="off">
+                        <input type="password" placeholder="请输入密码" name="password" autocomplete="off">
+                        <h4><em></em>用户名或密码不正确</h4>
                         <div class="btns">
                             <button>登录</button>
                             <span>或者<a href="javascript:;">注册</a></span>
                         </div>
-                        <p>完成注册即代表您同意我们的<a href="javascript:;">《服务条款》</a><a href="javascript:;">《隐私政策》</a><a href="javascript:;">《儿童隐私政策》</a></p>
+                        <p>完成注册即代表您同意我们的<a href="javascript:;">《服务条款》</a><a href="javascript:;">《隐私政策》</a><a
+                                href="javascript:;">《儿童隐私政策》</a></p>
                     </article>
                     <a href="javascript:;" class="close"></a>
                 </div>
@@ -57,7 +74,9 @@
                 <a href="javascript:;">创作者中心</a>
             </div>
             <div class="search">
-                <input type="text" placeholder="音乐/视频/电台/用户">
+                <form action="details.html" accept-charset="utf-8">
+                    <input type="text" placeholder="音乐/视频/电台/用户" name="keyword">
+                </form>
             </div>
         </div>
     </div>
@@ -120,226 +139,398 @@
                 <div class="name">热门推荐</div>
                 <div class=tab>
                     <ul>
-                        <li>
-                            <span>华语</span>    
+                        <li class="box">
+                            <em>华语</em>
+                            <div class="contain">
+                                <dl>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+                                        </a>
+                                    </dt>
+                                    <dt>
+                                        <img src="" alt="">
+                                        <strong></strong>
+                                        <a href="javascript:;">
+                                            <span></span>
+                                            <span class="play">
+                                                
+                                            </span>
+                                        </a>
+                                    </dt>
+                                </dl>
+                            </div>
                         </li>
                         <li class="bord"></li>
-                        <li>
-                            <span>流行</span>
+                        <li class="box">
+                            <em>流行</em>
                         </li>
                         <li class="bord"></li>
-                        <li>
-                            <span>摇滚</span>
+                        <li class="box">
+                            <em>摇滚</em>
                         </li>
                         <li class="bord"></li>
-                        <li>
-                            <span>民谣</span>
+                        <li class="box">
+                            <em>民谣</em>
                         </li>
                         <li class="bord"></li>
-                        <li>
-                            <span>电子</span>
+                        <li class="box">
+                            <em>电子</em>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="contain">
-                <dl>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                    <dt>
-                        <img src="images/dream1.jpg" alt="">
-                        <strong>周兴哲</strong>
-                        <a href="javascript:;">
-                            <span>在你的耳边说-周兴哲</span>
-                            <span class="play">
-                                
-                            </span>
-                            <span class="inf">
-                                <i>10</i>
-                                <i>2</i>
-                            </span>
-                        </a>
-                    </dt>
-                </dl>
-            </div>
+
         </div>
         <div class="newsongs">
             <div class="title">
                 <div class="name">新碟上架</div>
-                <span>更多</span>
+                <em>更多</em>
             </div>
             <div class="contain">
-                <a href="javascript:;" class="btnL"></a>
-                <a href="javascript:;" class="btnR"></a>
                 <div class="box">
                     <ul>
                         <li>
-                            <img src="images/newsongs1.png" alt="">
+                            <div class="img">
+                                <a href="javascript:;"></a>
+                                <img src="images/newsongs1.png">
+                                <span></span>
+                            </div>
                             <p>
-                                <a href="javascript:;"><span>忘川书</span></a> 
-                                <a href="javascript:;"><em>有声有社</em></a>                           
+                                <a href="javascript:;"><span>忘川书</span></a>
+                                <a href="javascript:;"><em>有声有社</em></a>
                             </p>
                         </li>
                         <li>
-                            <img src="images/newsongs1.png" alt="">
+                            <div class="img">
+                                <a href="javascript:;"></a>
+                                <img src="images/newsongs1.png">
+                                <span></span>
+                            </div>
                             <p>
-                                <a href="javascript:;"><span>忘川书</span></a> 
-                                <a href="javascript:;"><em>有声有社</em></a>                           
+                                <a href="javascript:;"><span>忘川书</span></a>
+                                <a href="javascript:;"><em>有声有社</em></a>
                             </p>
                         </li>
                         <li>
-                            <img src="images/newsongs1.png" alt="">
+                            <div class="img">
+                                <a href="javascript:;"></a>
+                                <img src="images/newsongs1.png">
+                                <span></span>
+                            </div>
                             <p>
-                                <a href="javascript:;"><span>忘川书</span></a> 
-                                <a href="javascript:;"><em>有声有社</em></a>                           
+                                <a href="javascript:;"><span>忘川书</span></a>
+                                <a href="javascript:;"><em>有声有社</em></a>
                             </p>
                         </li>
                         <li>
-                            <img src="images/newsongs1.png" alt="">
+                            <div class="img">
+                                <a href="javascript:;"></a>
+                                <img src="images/newsongs1.png">
+                                <span></span>
+                            </div>
                             <p>
-                                <a href="javascript:;"><span>忘川书</span></a> 
-                                <a href="javascript:;"><em>有声有社</em></a>                           
+                                <a href="javascript:;"><span>忘川书</span></a>
+                                <a href="javascript:;"><em>有声有社</em></a>
                             </p>
                         </li>
                         <li>
-                            <img src="images/newsongs1.png" alt="">
+                            <div class="img">
+                                <a href="javascript:;"></a>
+                                <img src="images/newsongs1.png">
+                                <span></span>
+                            </div>
                             <p>
-                                <a href="javascript:;"><span>忘川书</span></a> 
-                                <a href="javascript:;"><em>有声有社</em></a>                           
+                                <a href="javascript:;"><span>忘川书</span></a>
+                                <a href="javascript:;"><em>有声有社</em></a>
                             </p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>  
+        <div class="leaderBoard">
+            <div class="title">
+                <div class="name">排行榜</div>
+                <em>更多</em>
+            </div>
+            <div class="contain">
+                <ul>
+                    <li class="board-list">
+                        <div class="head">
+                            <span>巅峰榜</span>
+                            <em>流行指数</em>
+                            <i></i>
+                        </div>
+                        <ol>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                        </ol>
+                        <em class="bg"></em>
+                        <a href="javascript:;"></a>
+                        <span></span>
+                    </li>
+                    <li class="board-list">
+                        <div class="head">
+                            <span>巅峰榜</span>
+                            <em>流行指数</em>
+                            <i></i>
+                        </div>
+                        <ol>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                        </ol>
+                        <em class="bg"></em>
+                        <a href="javascript:;"></a>
+                        <span></span>
+                    </li>
+                    <li class="board-list">
+                        <div class="head">
+                            <span>巅峰榜</span>
+                            <em>流行指数</em>
+                            <i></i>
+                        </div>
+                        <ol>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                        </ol>
+                        <em class="bg"></em>
+                        <a href="javascript:;"></a>
+                        <span></span>
+                    </li>
+                    <li class="board-list">
+                        <div class="head">
+                            <span>巅峰榜</span>
+                            <em>流行指数</em>
+                            <i></i>
+                        </div>
+                        <ol>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                            <li>
+                                <p><i>1</i>莫&nbsp;(Live)</p>
+                                <span>张杰</span>
+                            </li>
+                        </ol>
+                        <em class="bg"></em>
+                        <a href="javascript:;"></a>
+                        <span></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="w clear">
+            <div class="leftbox">
+                <div class="links">
+                    <a href="javascript:;">服务条款</a>
+                    <span></span>
+                    <a href="javascript:;">服务条款</a>
+                    <span></span>
+                    <a href="javascript:;">服务条款</a>
+                    <span></span>
+                    <a href="javascript:;">服务条款</a>
+                    <span></span>
+                    <a href="javascript:;">服务条款</a>
+                    <span></span>
+                </div>
+                <div class="copyright">
+                    <p>
+                        <span class="sep span">网易公司版权所有©1997-2020</span>
+                        <span class="span">杭州乐读科技有限公司运营：</span>
+                        <span>浙网文[2018]3506-263号</span>
+                    </p>
+                    <p>
+                        <span class="sep span">违法和不良信息举报电话：0571-89853516</span>
+                        <span class="span">举报邮箱：</span>
+                        <a href="javascript:;">ncm5990@163.com</a>
+                    </p>
+                    <p>
+                        <span class="sep span">粤B2-20090191-18</span>
+                        <span>工业化和信息话备案管理系统网站</span>
+                    </p>
+                </div>
+            </div>
+            <div class="rightbox">
+                <h3>下载网易云音乐客户端</h3>
+                <ul>
+                    <li>
+                        <a href="javascript:;">
+                            <i></i>
+                            iphone版
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i></i>
+                            iphone版
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i></i>
+                            iphone版
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <i></i>
+                            iphone版
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="info">
+        <audio src="https://music.163.com/song/media/outer/url?id=108418.mp3" preload="auto"></audio>
         <div class="w">
-            <div class="btns">  
+            <div class="btns">
                 <button class="previous"></button>
                 <button class="pause"></button>
                 <button class="next"></button>
@@ -348,10 +539,10 @@
                 <div class="img">
                     <img src="" alt="">
                 </div>
-                <div class="musicinfo"> 
+                <div class="musicinfo">
                     <div class="name">
-                        <em class="songsname">我是真的爱你</em>
-                        <em class="author">李宗盛</em>
+                        <em class="songsname"></em>
+                        <em class="author"></em>
                     </div>
                     <div class="progressbar">
                         <div class="outbox">
@@ -360,8 +551,8 @@
                             </div>
                         </div>
                         <div class="time">
-                            <span class="currenttime">00:10</span>
-                            <span class="totaltime">04:04</span>
+                            <span class="currenttime">00:00</span>
+                            <span class="totaltime">00:00</span>
                         </div>
                     </div>
                 </div>

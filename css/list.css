@@ -1,0 +1,388 @@
+.wrapper{
+    width: 980px;
+    margin: 0 auto;
+}
+.main{
+    margin-top: 70px;
+}
+.main .wrapper{
+    border-right: 1px solid rgb(66, 63, 65);
+}
+.leftModule{
+    width: 240px;
+    position: fixed;
+    border-right: 1px solid rgb(66, 63, 65);
+    border-left: 1px solid rgb(66, 63, 65);
+    padding: 40px 0 50px 0;
+    min-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.leftModule::-webkit-scrollbar{
+    width: 6px;
+}
+.leftModule{
+    scrollbar-width: none;
+}
+.leftModule::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+.leftModule .title{
+    padding: 0 10px 12px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #999999;
+}
+.leftModule .title i{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px 0 5px;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    border-top: 8px solid #ccc;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+}
+.leftModule .title span{
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+.leftModule .title a{
+    float: right;
+    width: 52px;
+    height: 22px;
+    display: block;
+    outline: none;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    color: #999999;
+}
+.leftModule .title a::before{
+    content: '+';
+    font-weight: bold;
+    color: rgb(230, 0, 38);
+    font-size: 15px;
+    margin-right: 3px;
+}
+.leftModule ul li{
+    display: none;
+    padding: 6px 0 6px 20px;
+    cursor: pointer;
+    height: 54px;
+    position: relative;
+    color: #999999;  
+}
+.leftModule ul .choose{
+    background-color: rgb(60, 60, 60);
+}
+.leftModule ul li .img{
+    float: left;
+}
+.leftModule ul li img{
+    width: 40px;
+    height: 40px;
+}
+.leftModule ul li .inf{
+    float: right;
+}
+.leftModule ul li .inf h3{
+    width: 150px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    line-height: 1em;
+}
+.leftModule ul li .inf h3,
+.rightModule .column .contain h3,
+.leftModule ul li .inf span{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+.rightModule{
+    float: right;
+    height: 100%;
+    width: 740px;
+    padding-bottom: 50px;
+}
+.rightModule .column{
+    padding: 40px;
+}
+.rightModule .column .img{
+    float: left;
+    position: relative;
+    margin-right: 40px;
+    width: 208px;
+    height: 208px;
+    border: 1px solid #999999;
+}
+.rightModule .column .img::after{
+    content: '';
+    display: block;
+    z-index: 1;
+}
+.rightModule .column .img::after,
+.rightModule .column .img img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.rightModule .column .contain{
+    float: left;
+    padding-top: 5px;
+}
+.rightModule .column .contain h3{
+    margin-bottom: 20px;
+    line-height: 1em;
+    font-size: 20px;
+    font-weight: normal;
+}
+.rightModule .column .contain h3 span{
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    font-size: 12px;
+    background-color: rgb(230, 0, 38);
+    color: #ffffff;
+    text-align: center;
+    line-height: 24px;
+    padding: 0 10px;
+    margin-right: 14px;
+}
+.rightModule .column .contain h3 span::after{
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 0;
+    display: block;
+    border-left: 10px solid rgb(230, 0, 38);
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
+.rightModule .column .contain h3 em{
+    font-size: 20px;
+    color: #999999;
+}
+.rightModule .column .contain h4{
+    font-weight: normal;
+    margin-bottom: 20px;
+    line-height: 35px;
+    font-size: 12px;
+}
+.rightModule .column .contain h4 img{
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    line-height: 35px;
+    margin-right: 10px;
+}
+.rightModule .column .contain h4 a{ 
+    color: #0c73c2;
+}
+.rightModule .column .contain h4 em{
+    margin-left: 15px;
+    color: #999999;
+}
+.rightModule .column .contain h4 em i{
+    margin-right: 5px;
+}
+.rightModule .column .contain .btns{
+    margin-bottom: 25px;
+}
+.rightModule .column .contain .btns a{
+    margin-right: 6px;
+    display: inline-block;
+    color: #bebebe;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    min-width: 23px;
+    background-color: rgb(60, 60, 60);
+    border-radius: 3px;
+}
+.rightModule .column .contain .btns a:first-child{
+    padding: 0 10px 0 15px;
+}
+.rightModule .column .contain .btns a::before{
+    display: block;
+    float: left;
+    height: 1em;
+    font-size: 15px;
+    font-family: 'icomoon';
+    margin: 0 5px 0 0;
+}
+.rightModule .column .contain .btns .firbtn::before{
+    content: '';
+}
+.rightModule .column .contain .btns .secbtn::before{
+    content: '';
+}
+.rightModule .column .contain .btns .thibtn::before{
+    content: '';
+}
+.rightModule .column .contain .btns .forbtn::before{
+    content: '';
+}
+.rightModule .column .contain .btns .fivbtn::before{
+    content: '';
+}
+.songlist{
+    width: 100%;
+    overflow: hidden;
+    margin: 35px auto 0 auto;
+    background-color: rgb(41, 35, 35);
+    border-top: 1px solid rgb(64, 39, 53);
+}
+.songlist .title{
+    height: 35px;
+    width: 100%;
+    border-bottom: 1px solid rgb(32, 22, 22);   
+    background: rgb(46, 41, 41);
+}
+.songlist .title .name{
+    color: #6a4777de;
+    font-size: 18px;
+    float: left;
+    margin-top: 8px;
+}
+.songlist .title .name span{
+    font-size: 12px;
+    margin: 9px 0 0 20px;
+    color: #999999;
+}
+.songlist .title em {
+    float: right;
+    height: 14px;
+    display: block;
+    margin-top: 11px;
+    line-height: 12px;
+    color: #a8b9af;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.songlist .contain{
+    padding-bottom: 50px;
+    background-color: rgb(41, 35, 35);
+}
+.songlist .contain .nomusic{
+    display: none;
+    padding: 105px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+.songlist .contain .nomusic h3{
+    padding-bottom: 38px;
+    font-size: 18px;
+    color: #999999;
+}
+.songlist .contain .nomusic h3 i{
+    font-family: 'icomoon';
+    margin-right: 17px;
+    width: 64px;
+    height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    font-size: 50px;
+}
+.songlist .contain .nomusic p{
+    color: #999999;
+}
+.songlist .contain .nomusic p i{
+    font-family: 'icomoon';
+    margin: 0 2px;
+}
+.songlist .contain .nomusic p a{
+    color: #0c73c2;
+    margin-left: 5px;
+}
+.footer{
+    display: none;
+}
+.songlist .contain .musiclist .title div{
+    float: left;
+    border-right: 1px solid rgb(66, 63, 65);
+    background-color: rgb(46, 41, 41);
+    border-bottom: 1px solid rgb(66, 63, 65);
+    padding-left: 15px;
+    line-height: 39px;
+    font-size: 14px;
+    height: 40px;
+    color: #cccccc;
+    border-top: 2px solid #cccccc;
+}
+.songlist .contain .musiclist .title{
+    width: 740px;
+}
+.songlist .contain .musiclist .title .songtitle{
+    width: 45%;
+    padding-left: 20px;
+}
+.songlist .contain .musiclist .title .time{
+    width: 18.3%;
+}
+.songlist .contain .musiclist .title .author{
+    width: 18.3%;
+}
+.songlist .contain .musiclist .title .album{
+    width: 18.3%;
+}
+.songlist .contain .musiclist li{
+    padding: 10px 0;
+    width: 740px;
+}
+.songlist .contain .musiclist li:nth-child(even){
+    background-color: rgb(50, 50, 50);
+}
+.songlist .contain .musiclist li span,
+.songlist .contain .musiclist li em{
+    padding-left: 15px;
+    float: left;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #cccccc;
+}
+.songlist .contain .musiclist li i{
+    color: #999999;
+    margin-left: 4px;
+}
+.songlist .contain .musiclist li strong{
+    font-family: 'icomoon';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    height: 17px;
+    color: #cccccc;
+    font-size: 17px;
+    cursor: pointer;
+}
+.songlist .contain .musiclist li strong:hover{
+    color: #ffffff;
+}
+.songlist .contain .musiclist li .songname{
+    width: 45%;
+    cursor: pointer;
+}
+.songlist .contain .musiclist li em{
+    width: 18.3%;
+}
+.songlist .contain .musiclist li .btns a{
+    font-family: 'icomoon';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    color: #cccccc;
+    vertical-align: middle;
+    display: none;
+}

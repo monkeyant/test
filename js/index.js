@@ -1,5 +1,70 @@
-window.addEventListener('load', function () {
+﻿window.addEventListener('load', function () {
     // 轮播图
+    //搜索框
+    function headersearch() {
+        let header = this.document.querySelector('.header-top');
+        let search = header.querySelector('.search');
+        let input = search.querySelector('input');
+        let form = search.querySelector('form');
+        input.addEventListener('focus', function () {
+            document.addEventListener('keyup', function (e) {
+                if (e.keyCode == 13) {
+                    form.submit();
+                }
+            });
+        });
+    }
+    headersearch();
+    //登录界面
+    function login() {
+        let login = document.querySelector('.header-top').querySelector('.login');
+        let login_btn = login.children[0];
+        let contain = login.querySelector('.contain');
+        let bg = login.querySelector('.bg');
+        let close = contain.querySelector('.close');
+        let body = document.getElementsByTagName('body')[0];
+        login_btn.addEventListener('click', function () {
+            contain.style.display = 'block';
+            bg.style.display = 'block';
+            body.style.overflowY = 'hidden';
+        });
+        close.addEventListener('click', function () {
+            contain.style.display = 'none';
+            bg.style.display = 'none';
+            body.style.overflowY = 'scroll';
+        });
+        //登录功能
+        let input = contain.querySelectorAll('input');
+        let avatar = login.querySelector('.avatar');
+        let img = avatar.querySelector('img');
+        let btn = contain.querySelector('.btns').querySelector('button');
+        let h4 = contain.querySelector('h4');
+        btn.addEventListener('click', function () {
+            let phone = input[0].value;
+            let password = input[1].value;
+            ajax({
+                type: 'get',
+                url: 'http://musicapi.leanapp.cn/login/cellphone',
+                data: {
+                    phone: phone,
+                    password: password
+                },
+                success: function (responseText, xhr) {
+                    if (responseText.code != 200) {
+                        h4.style.visibility = 'visible';
+                    } else {
+                        avatar.style.display = 'block';
+                        img.src = responseText.profile.avatarUrl;
+                        login_btn.style.display = 'none';
+                        contain.style.display = 'none';
+                        bg.style.display = 'none';
+                        body.style.overflow = 'scroll';
+                    }
+                }
+            })
+        });
+    }
+    login();
     slide();
     function slide() {
         let banner = document.querySelector('.banner');
@@ -89,55 +154,129 @@ window.addEventListener('load', function () {
             }, 3000)
         });
     }
-    //登录界面弹出
-    function login() {
-        let login = document.querySelector('.header-top').querySelector('.login');
-        let login_btn = login.children[0];
-        let contain = login.querySelector('.contain');
-        let bg = login.querySelector('.bg');
-        let close = contain.querySelector('.close');
-        let body = document.getElementsByTagName('body')[0];
-        login_btn.addEventListener('click',function() {
-            contain.style.display = 'block';
-            bg.style.display = 'block';
-            body.style.overflow = 'hidden';
-        });
-        close.addEventListener('click',function() {
-            contain.style.display = 'none';
-            bg.style.display = 'none';
-            body.style.overflow = 'scroll';
-        })
-    }
-    login();
-    //底部歌曲信息
-    function info(){
-        let info = document.querySelector('.info');
-        let btns = info.querySelector('.btns');
-        let play = info.querySelector('.play');
-        let volume = info.querySelector('.volume');
-        let lock = info.querySelector('.lock');
-        let flag = 1;
-        btns.children[1].addEventListener('click',function (){
-            if (flag){
-                this.style.backgroundPosition = "-40px -204px";
-                flag = 0;
-            }else{
-                this.style.backgroundPosition = "-40px -165px";
-                flag = 1;
+    function hot() {
+        let hot = document.querySelector('.hotrecommend');
+        let contain = [];
+        let tab = hot.querySelector('.tab').querySelectorAll('.box');
+        contain[0] = hot.querySelector('.contain');
+        for (let i = 1; i < 5; i++) {
+            contain[i] = contain[0].cloneNode(true);
+            tab[i].appendChild(contain[i]);
+        }
+        contain[0].className = 'contain current';
+        //点击切换
+        for (let i = 0; i < tab.length; i++) {
+            let index = i;
+            tab[i].onclick = function () {
+                for (let i = 0; i < tab.length; i++) {
+                    contain[i].className = 'contain';
+                }
+                contain[index].className = 'contain current'
+            }
+        }
+        let dt = [];
+        let img = [];
+        let strong = [];
+        let span = [];
+        let play = [];
+        let songlist = [];
+        let songs = [];
+        for (let i = 0; i < contain.length; i++) {
+            let arr = contain[i].querySelectorAll('dt');
+            dt[i] = Array.from(arr);
+            img[i] = [];
+            strong[i] = [];
+            span[i] = [];
+            play[i] = [];
+            songlist[i] = [];
+            songs[i] = [];
+            for (let j = 0; j < 10; j++) {
+                img[i][j] = dt[i][j].querySelector('img');
+                strong[i][j] = dt[i][j].querySelector('strong');
+                span[i][j] = dt[i][j].querySelector('a').children[0];
+                play[i][j] = dt[i][j].querySelector('a');
+            }
+        }
+        ajax({
+            type: 'get',
+            url: 'http://musicapi.leanapp.cn/playlist/hot',
+            success: function (responseText, xhr) {
+                for (let i = 0; i < responseText.tags.length; i++) {
+                    songlist[i] = responseText.tags[i].id;
+                }
+                let index = 0;
+                for (let i = 0; i < 6; i++) {
+                    ajax({
+                        type: 'get',
+                        url: 'http://musicapi.leanapp.cn/playlist/detail',
+                        data: {
+                            id: songlist[i]
+                        },
+                        success: function (responseText, xhr) {
+                            if (responseText.code != 200) {
+                                index = i;
+                                return;
+                            }
+                            if (i == 5) {
+                                i = index;
+                            }
+                            for (let j = 0; j < 50; j++) {
+                                if (j >= responseText.playlist.tracks.length) {
+                                    break;
+                                }
+                                songs[i][j] = {
+                                    songname: responseText.playlist.tracks[j].name,
+                                    author: responseText.playlist.tracks[j].ar[0].name,
+                                    audioSrc: 'https://music.163.com/song/media/outer/url?id=' + responseText.playlist.tracks[j].id + '.mp3',
+                                    picUrl: responseText.playlist.tracks[j].al.picUrl
+                                }
+                            }
+                            for (let j = 0; j < 10; j++) {
+                                strong[i][j].innerHTML = songs[i][j].songname;
+                                img[i][j].src = songs[i][j].picUrl;
+                                span[i][j].innerHTML = songs[i][j].songname + '-' + songs[i][j].author;
+                            }
+                            //给所有的图片添加点击事件
+                            for (let j = 0; j < 10; j++) {
+                                play[i][j].onclick = function () {
+                                    startPlay(songs, i, j);
+                                }
+                            }
+                        }
+                    });
+                }
             }
         });
-        let box = info.querySelector('.box');
-        let outbox = [];
-        outbox[0] = play.querySelector('.outbox');
-        outbox[1] = volume.querySelector('.outbox');
-        outbox[0].addEventListener('click',function(e) {
-            let x = (e.pageX - this.offsetLeft) / this.offsetWidth;
-            this.children[0].style.width = x * 100 + '%';
-        });
-        outbox[1].addEventListener('click',function(e) {
-            console.log(box.offsetTop);
-            console.log(e.pageY)
-        });
     }
-    info();
+    hot();
 })
+                                // let Id = responseText.playlist.tracks[i].id;
+                                // ajax({
+                                //     type: 'get',
+                                //     url: 'http://musicapi.leanapp.cn/check/music',
+                                //     data: {
+                                //         id: Id
+                                //     },
+                                //     success: function (responseText, xhr) {
+                                //         console.log(11)
+                                //         if (responseText.success == true) {
+                                //             let http = new XMLHttpRequest()
+                                //             http.withCredentials = true
+                                //             http.onreadystatechange = function () {
+                                //                 if (http.readyState === 4 && http.status === 200) {
+                                //                     console.log(JSON.parse(http.responseText))
+                                //                 }
+                                //             }
+                                //             http.open("GET", `http://musicapi.leanapp.cn/song/url?id=`+Id, true);
+                                //             http.send();
+
+                                // ajax({
+                                //     type: 'get',
+                                //     url: 'http://musicapi.leanapp.cn/song/url',
+                                //     withCredentials: true,
+                                //     data: {
+                                //         id: Id
+                                //     },
+                                //     success: function (responseText, xhr) {
+                                //         console.log(responseText);
+                                //     }
