@@ -1,14 +1,14 @@
 @font-face {
     font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?6yv66i');
-    src:  url('../fonts/icomoon.eot?6yv66i#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?6yv66i') format('truetype'),
-      url('../fonts/icomoon.woff?6yv66i') format('woff'),
-      url('../fonts/icomoon.svg?6yv66i#icomoon') format('svg');
+    src:  url('../fonts/icomoon.eot?ep91z4');
+    src:  url('../fonts/icomoon.eot?ep91z4#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?ep91z4') format('truetype'),
+      url('../fonts/icomoon.woff?ep91z4') format('woff'),
+      url('../fonts/icomoon.svg?ep91z4#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
-}
+  }
 *{
     margin:0;
     padding:0;
@@ -364,7 +364,7 @@ input{
     position: fixed;
     bottom: 0;
     height: 50px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(51,61,71);
     width: 100%;
     z-index: 100;
 }
@@ -375,7 +375,7 @@ input{
 .info .btns button{
     font-family: 'icomoon';
     color: #fff;
-    background-color: #000;
+    background-color: rgb(51,61,71);
     border: 0;
     outline: none;
     vertical-align: middle;
@@ -476,7 +476,7 @@ input{
     left: -3px;
     width: 32px;
     height: 120px;
-    background-color: #000;
+    background-color: rgb(51,61,71);
 }
 .info .volume .box .outbox{
     width: 4px;
@@ -486,6 +486,7 @@ input{
     left: 50%;
     margin-left: -2px;
     cursor: pointer;
+    background-color: #666666;
 }
 .info .volume .box .outbox .slide{
     position: absolute;
@@ -600,4 +601,64 @@ input{
     color: #999999;
     display: block;
     margin-bottom: 14px;
+}
+.massage-container{
+    position: fixed;
+    left: 0;
+    top: 70px;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+.massage-container .massage{
+    background: #fff;
+    margin: 10px 0;
+    padding: 0 10px;
+    height: 40px;
+    box-shadow: 0 0 10px 0 #eee;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 40px;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.massage-container .massage i{
+    font-family: 'icomoon';
+    font-size: 14px;
+}
+.massage-container .massage .close{
+    cursor: pointer;
+    color: #999;
+}
+@keyframes message-move-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.move-in {
+    animation: message-move-in 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes message-move-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+.move-out {
+    animation: message-move-out 0.3s ease-in-out;
+    animation-fill-mode: forwards;
 }

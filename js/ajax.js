@@ -24,9 +24,13 @@ function ajax (options){
     }
     xhr.open(defaults.type,defaults.url,defaults.async);
     if (defaults.type == 'post'){
-        var contentType = defaults.header['Content-type'];
+        var contentType = defaults.header['Content-Type'];
         xhr.setRequestHeader('Content-Type',contentType);
-        xhr.send(params);
+        if(contentType == 'application/json'){
+            xhr.send(JSON.stringify(defaults.data))
+        }else{
+            xhr.send(params);
+        }
     }else{
         xhr.send();
     }

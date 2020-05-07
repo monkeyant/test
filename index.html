@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/common.css">
     <script src="js/ajax.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
     <title>Document</title>
@@ -20,7 +21,7 @@
                 <ul>
                     <li class="current">
                         <a href="javascript:;">发现音乐</a>
-                        <div class="contain">
+                        <!-- <div class="contain">
                             <dl>
                                 <dt><a href="javascript:;" class="current">推荐</a></dt>
                                 <dt><a href="javascript:;">排行榜</a></dt>
@@ -29,7 +30,7 @@
                                 <dt><a href="javascript:;">歌手</a></dt>
                                 <dt><a href="javascript:;">新碟上架</a></dt>
                             </dl>
-                        </div>
+                        </div> -->
                     </li>
                     <li><a href="http://localhost/list.html">我的音乐</a></li>
                     <li><a href="javascript:;">朋友</a></li>
@@ -90,35 +91,34 @@
                         <li class="box0">
                             <a href="javascript:;"></a>
                             <em></em>
-                            <img src="images/slide0.png" alt="">
-                            <p>对不起，你一直在等我，但我却现在才来</p>
+                            <img src="images/slide0.jpg" alt="">
+
                             </a>
                         </li>
                         <li class="box1">
                             <a href="javascript:;">
                                 <em></em>
-                                <img src="images/slide1.png" alt="">
-                                <p>再见了！只要是活着的东西，就算是神都杀给你看……无垢识 开境！死亡啊，别站在我面前!</p>
+                                <img src="images/slide1.jpg" alt="">
+
                         </li>
                         <li class="box2">
                             <a href="javascript:;">
                                 <em></em>
-                                <img src="images/slide2.png" alt="">
-                                <p>无意义的理想,迟早会在现实面前崩溃.</p>
+                                <img src="images/slide2.jpg" alt="">
+
                             </a>
                         </li>
                         <li class="box3">
                             <a href="javascript:;">
                                 <em></em>
-                                <img src="images/slide3.png" alt="">
-                                <p>什么都无法舍弃的人，什么也改变不了.</p>
+                                <img src="images/slide3.jpg" alt="">
+
                             </a>
                         </li>
                         <li class="box4">
                             <a href="javascript:;">
                                 <em></em>
-                                <img src="images/slide4.png" alt="">
-                                <p>樱花满地集于我心 楪舞纷飞祈愿相随.</p>
+                                <img src="images/slide4.jpg" alt="">
                             </a>
                         </li>
                     </ul>
@@ -141,117 +141,6 @@
                     <ul>
                         <li class="box">
                             <em>华语</em>
-                            <div class="contain">
-                                <dl>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-                                        </a>
-                                    </dt>
-                                    <dt>
-                                        <img src="" alt="">
-                                        <strong></strong>
-                                        <a href="javascript:;">
-                                            <span></span>
-                                            <span class="play">
-                                                
-                                            </span>
-                                        </a>
-                                    </dt>
-                                </dl>
-                            </div>
                         </li>
                         <li class="bord"></li>
                         <li class="box">
@@ -272,7 +161,117 @@
                     </ul>
                 </div>
             </div>
+            <div class="contain">
+                <dl>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
 
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+                        </a>
+                    </dt>
+                    <dt>
+                        <img src="" alt="">
+                        <strong></strong>
+                        <a href="javascript:;">
+                            <span></span>
+                            <span class="play">
+                                
+                            </span>
+                        </a>
+                    </dt>
+                </dl>
+            </div>
         </div>
         <div class="newsongs">
             <div class="title">
@@ -356,24 +355,31 @@
                         </div>
                         <ol>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>1</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>2</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>3</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>4</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                         </ol>
                         <em class="bg"></em>
-                        <a href="javascript:;"></a>
                         <span></span>
                     </li>
                     <li class="board-list">
@@ -384,24 +390,31 @@
                         </div>
                         <ol>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>1</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>2</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>3</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>4</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                         </ol>
                         <em class="bg"></em>
-                        <a href="javascript:;"></a>
                         <span></span>
                     </li>
                     <li class="board-list">
@@ -412,24 +425,31 @@
                         </div>
                         <ol>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>1</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>2</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>3</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>4</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                         </ol>
                         <em class="bg"></em>
-                        <a href="javascript:;"></a>
                         <span></span>
                     </li>
                     <li class="board-list">
@@ -440,24 +460,31 @@
                         </div>
                         <ol>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>1</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>2</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>3</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                             <li>
-                                <p><i>1</i>莫&nbsp;(Live)</p>
-                                <span>张杰</span>
+                                <a href="javascript:;">
+                                    <p><i>4</i><em>莫&nbsp;(Live)</em></p>
+                                    <span>张杰</span>
+                                </a>
                             </li>
                         </ol>
                         <em class="bg"></em>
-                        <a href="javascript:;"></a>
                         <span></span>
                     </li>
                 </ul>
@@ -564,7 +591,8 @@
             <div class="otherbtns">
                 <a href="javascript:;"></a>
                 <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
+                <a href="javascript:;">
+                </a>
                 <a href="javascript:;"></a>
             </div>
             <div class="volume">
@@ -576,6 +604,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- 消息框弹出 -->
+    <div class="massage-container">
+        <div class="massage">
+            <i></i>
+            <span>歌曲无法播放，自动播放下一首</span>
+            <i class="close"></i>
         </div>
     </div>
 </body>

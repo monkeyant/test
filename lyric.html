@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="css/lyric.css">
     <script src="js/ajax.js"></script>
-    <script charset="utf-8" src="js/common.js"></script>
-    <script charset="utf-8" src="js/details.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/lyric.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             <h1 class="logo"><a href="#"></a></h1>
             <div class="nav">
                 <ul>
-                    <li>
+                    <li class="current">
                         <a href="index.html">发现音乐</a>
                         <!-- <div class="contain">
                             <dl>
@@ -31,7 +32,7 @@
                             </dl>
                         </div> -->
                     </li>
-                    <li><a href="list.html">我的音乐</a></li>
+                    <li><a href="http://localhost/list.html">我的音乐</a></li>
                     <li><a href="javascript:;">朋友</a></li>
                     <li><a href="javascript:;">商城</a></li>
                     <li><a href="javascript:;">音乐人</a></li>
@@ -74,127 +75,46 @@
                 <a href="javascript:;">创作者中心</a>
             </div>
             <div class="search">
-                <input type="text" placeholder="音乐/视频/电台/用户">
+                <form action="details.html" accept-charset="utf-8">
+                    <input type="text" placeholder="音乐/视频/电台/用户" name="keyword">
+                </form>
             </div>
         </div>
     </div>
     <div class="main">
-        <div class="search">
-            <input type="text">
-            <button></button>
-        </div>
-        <div class="tab">
-            <p>搜索“<i>进击的巨人</i>”，找到<em>0</em>首单曲</p>
-            <ul class="clear">
-                <li class="current">
-                    <a href="javascript:;">单曲</a>
-                </li>
-                <li>
-                    <a href="javascript:;">歌手</a>
-                </li>
-                <li>
-                    <a href="javascript:;">专辑</a>
-                </li>
-                <li>
-                    <a href="javascript:;">视频</a>
-                </li>
-                <li>
-                    <a href="javascript:;">歌词</a>
-                </li>
-                <li>
-                    <a href="javascript:;">歌单</a>
-                </li>
-                <li>
-                    <a href="javascript:;">主播电台</a>
-                </li>
-                <li>
-                    <a href="javascript:;">用户</a>
-                </li>
-            </ul>
-            <div class="contain">
-                <dl>
-                    <dt>
-                        <strong></strong>
-                        <span class="songname">红莲的弓矢</span>
-                        <span class="btns">
-                            <a href="javascript:;" class="firbtn"></a>
-                            <a href="javascript:;" class="secbtn"></a>
-                            <a href="javascript:;" class="thibtn"></a>
-                            <a href="javascript:;" class="fivbtn"></a>
-                        </span>
-                        <em class="introduct">linked horizon</em>
-                        <em class="songlist">自由的进击</em>
-                        <em class="time">05：16</em>
-                    </dt>
-                </dl>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="w clear">
-            <div class="leftbox">
-                <div class="links">
-                    <a href="javascript:;">服务条款</a>
-                    <span></span>
-                    <a href="javascript:;">服务条款</a>
-                    <span></span>
-                    <a href="javascript:;">服务条款</a>
-                    <span></span>
-                    <a href="javascript:;">服务条款</a>
-                    <span></span>
-                    <a href="javascript:;">服务条款</a>
-                    <span></span>
-                </div>
-                <div class="copyright">
-                    <p>
-                        <span class="sep span">网易公司版权所有©1997-2020</span>
-                        <span class="span">杭州乐读科技有限公司运营：</span>
-                        <span>浙网文[2018]3506-263号</span>
-                    </p>
-                    <p>
-                        <span class="sep span">违法和不良信息举报电话：0571-89853516</span>
-                        <span class="span">举报邮箱：</span>
-                        <a href="javascript:;">ncm5990@163.com</a>
-                    </p>
-                    <p>
-                        <span class="sep span">粤B2-20090191-18</span>
-                        <span>工业化和信息话备案管理系统网站</span>
-                    </p>
+        <div class="wrapper">
+            <div class="leftModule">
+                <div class="contain">
+                    <div class="img spin">
+                        <span></span>
+                        <img src="images/like.jpg" alt="">
+                    </div>
+                    <div class="btns">
+                        <a href="javascript:;" class="firbtn">播放</a>
+                        <a href="javascript:;" class="secbtn">收藏</a>
+                        <a href="javascript:;" class="thibtn">分享</a>
+                        <a href="javascript:;" class="forbtn">下载</a>
+                    </div>
                 </div>
             </div>
-            <div class="rightbox">
-                <h3>下载网易云音乐客户端</h3>
-                <ul>
-                    <li>
-                        <a href="javascript:;">
-                            <i></i>
-                            iphone版
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i></i>
-                            iphone版
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i></i>
-                            iphone版
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i></i>
-                            iphone版
-                        </a>
-                    </li>
+            <div class="rightModule">
+                <div class="column">
+                    <h3>
+                        <span>单曲</span>
+                        <em>我喜欢的音乐</em>
+                    </h3>
+                    <h4>
+                        <p><i>歌手&nbsp;:</i><em>赵雷</em></p>
+                    </h4>
+                </div>
+                <ul class="lyric">
+                    <li></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="info">
-        <audio src="https://music.163.com/song/media/outer/url?id=108418.mp3"></audio>
+        <audio src="https://music.163.com/song/media/outer/url?id=108418.mp3" preload="auto"></audio>
         <div class="w">
             <div class="btns">
                 <button class="previous"></button>
@@ -230,7 +150,8 @@
             <div class="otherbtns">
                 <a href="javascript:;"></a>
                 <a href="javascript:;"></a>
-                <a href="javascript:;"></a>
+                <a href="javascript:;">
+                </a>
                 <a href="javascript:;"></a>
             </div>
             <div class="volume">

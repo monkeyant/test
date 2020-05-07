@@ -13,7 +13,7 @@
     position: fixed;
     border-right: 1px solid rgb(66, 63, 65);
     border-left: 1px solid rgb(66, 63, 65);
-    padding: 40px 0 50px 0;
+    padding: 40px 0 122px 0;
     min-height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -136,6 +136,7 @@
 }
 .rightModule .column .contain{
     float: left;
+    max-width: 410px;
     padding-top: 5px;
 }
 .rightModule .column .contain h3{
@@ -247,7 +248,7 @@
     background: rgb(46, 41, 41);
 }
 .songlist .title .name{
-    color: #6a4777de;
+    color: #bd93c5;
     font-size: 18px;
     float: left;
     margin-top: 8px;
@@ -273,7 +274,7 @@
     background-color: rgb(41, 35, 35);
 }
 .songlist .contain .nomusic{
-    display: none;
+    display: block;
     padding: 105px 0;
     text-align: center;
     margin-top: 30px;
@@ -305,6 +306,9 @@
     margin-left: 5px;
 }
 .footer{
+    display: none;
+}
+.songlist .contain .musiclist{
     display: none;
 }
 .songlist .contain .musiclist .title div{

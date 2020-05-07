@@ -51,7 +51,7 @@ window.addEventListener('load', function () {
                         login_btn.style.display = 'none';
                         contain.style.display = 'none';
                         bg.style.display = 'none';
-                        body.style.overflow = 'scroll';
+                        body.style.overflowY = 'scroll';
                     }
                 }
             })
@@ -109,19 +109,20 @@ window.addEventListener('load', function () {
             let songs = [];
             ajax({
                 type: 'get',
-                url: 'http://musicapi.leanapp.cn/search',
+                url: 'http://musicapi.leanapp.cn/search/suggest',
                 data: {
                     keywords: keyword
                 },
                 success: function (responseText, xhr) {
-                    console.log(responseText)
+                    dl.innerHTML = '';
                     if (undefined != responseText.result && responseText.code == 200 && undefined != responseText.result.songs) {
                         em.innerHTML = responseText.result.songs.length + '';
-                        for (let i = 1; i < responseText.result.songs.length - 1; i++) {
+                        for (let i = 0; i < responseText.result.songs.length; i++) {
                             let temp = dt.cloneNode(true);
                             dl.appendChild(temp);
                         }
                     } else {
+                        em.innerHTML = '0';
                         return;
                     }
                     let dts = dl.querySelectorAll('dt');

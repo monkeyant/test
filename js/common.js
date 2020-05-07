@@ -3,6 +3,84 @@ if (sessionStorage.getItem('flag')) {
 }
 sessionStorage.setItem('flag', 'false');
 // 点击暂停播放按钮
+//登录界面
+function login() {
+    let login = document.querySelector('.header-top').querySelector('.login');
+    let login_btn = login.children[0];
+    let contain = login.querySelector('.contain');
+    let bg = login.querySelector('.bg');
+    let close = contain.querySelector('.close');
+    let body = document.getElementsByTagName('body')[0];
+    login_btn.addEventListener('click', function () {
+        contain.style.display = 'block';
+        bg.style.display = 'block';
+        body.style.overflowY = 'hidden';
+    });
+    close.addEventListener('click', function () {
+        contain.style.display = 'none';
+        bg.style.display = 'none';
+        body.style.overflowY = 'scroll';
+    });
+    //登录功能
+    let input = contain.querySelectorAll('input');
+    let avatar = login.querySelector('.avatar');
+    let img = avatar.querySelector('img');
+    let btn = contain.querySelector('.btns').querySelector('button');
+    let h4 = contain.querySelector('h4');
+    //已经登陆过，切换页面登录
+    if (sessionStorage.getItem('phone') && sessionStorage.getItem('password')) {
+        ajax({
+            type: 'get',
+            url: 'http://musicapi.leanapp.cn/login/cellphone',
+            data: {
+                phone: sessionStorage.getItem('phone'),
+                password: sessionStorage.getItem('password')
+            },
+            success: function (responseText, xhr) {
+                if (responseText.code != 200) {
+                    return;
+                } else {
+                    avatar.style.display = 'block';
+                    img.src = responseText.profile.avatarUrl;
+                    login_btn.style.display = 'none';
+                }
+            }
+        })
+    }
+    btn.addEventListener('click', function () {
+        let phone = input[0].value;
+        let password = input[1].value;
+        ajax({
+            type: 'get',
+            url: 'http://musicapi.leanapp.cn/login/cellphone',
+            data: {
+                phone: phone,
+                password: password
+            },
+            success: function (responseText, xhr) {
+                if (responseText.code != 200) {
+                    h4.style.visibility = 'visible';
+                } else {
+                    if (sessionStorage.getItem('phone')) {
+                        sessionStorage.removeItem('phone');
+                        sessionStorage.removeItem('password');
+                        sessionStorage.removeItem('uid');
+                    }
+                    sessionStorage.setItem('phone', phone);
+                    sessionStorage.setItem('password', password);
+                    sessionStorage.setItem('uid', responseText.account.id);
+                    avatar.style.display = 'block';
+                    img.src = responseText.profile.avatarUrl;
+                    login_btn.style.display = 'none';
+                    contain.style.display = 'none';
+                    bg.style.display = 'none';
+                    body.style.overflowY = 'scroll';
+                    location.reload(true);
+                }
+            }
+        })
+    });
+}
 function playPause() {
     let audio = document.querySelector('audio');
     let info = document.querySelector('.info');
@@ -37,9 +115,7 @@ function playPause() {
                     clearInterval(timer);
                 }
             }, 10)
-            audio.oncanplay = function () {
-                audio.play();
-            }
+            audio.play();
         }
     });
 }
@@ -98,6 +174,8 @@ function volume() {
     let outbox = volume.querySelector('.outbox');
     let slide = outbox.querySelector('.slide');
     let slide_btn = slide.querySelector('span');
+    audio.volume = 0.3;
+    slide.style.height = '60%';0
     //点击出现
     volume.addEventListener('click', function () {
         if (box.style.display == 'block') {
@@ -134,7 +212,6 @@ function volume() {
 }
 // 点击上一首下一首切歌
 function changeMusic(audioList, num1, num2) {
-    let audio = document.querySelector('audio');
     let length = arguments.length;
     let info = document.querySelector('.info');
     let btns = info.querySelector('.btns');
@@ -173,10 +250,19 @@ function startPlay(audioList, num1, num2) {
     let audioInf = {};
     if (arguments.length == 3) {
         audioInf = audioList[num1][num2];
+        if (audioInf == undefined) {
+            audioInf = audioList[0][0];
+            num1 = 0;
+            num2 = 0;
+        }
         changeMusic(audioList, num1, num2);
     }
     if (arguments.length == 2) {
         audioInf = audioList[num1];
+        if (audioInf == undefined) {
+            audioInf = audioList[0];
+            num1 = 0;
+        }
         changeMusic(audioList, num1);
     }
     let info = document.querySelector('.info');
@@ -184,14 +270,16 @@ function startPlay(audioList, num1, num2) {
     let btns = info.querySelector('.btns');
     let pic = play.querySelector('img');
     let songname = play.querySelector('.songsname');
+    let ran = info.querySelector('.otherbtns').children[1];
     let author = play.querySelector('.author');
+    let massage = document.querySelector('.massage-container').querySelector('.massage');
     //播放按钮变化
     if (sessionStorage.getItem('flag') == 'true') {
-        btns.children[1].click();
         audio.src = audioInf.audioSrc;
+        btns.children[1].click();
         setTimeout(function () {
             btns.children[1].click();
-        }, 200);
+        }, 1000);
     } else {
         audio.src = audioInf.audioSrc;
         btns.children[1].click();
@@ -199,35 +287,68 @@ function startPlay(audioList, num1, num2) {
     pic.src = audioInf.picUrl;
     songname.innerHTML = audioInf.songname;
     author.innerHTML = audioInf.author;
-    audio.volume = 0.3;
+    pic.addEventListener('click', function () {
+        let id = audioInf.audioSrc.substr(46);
+        let len = id.length - 4;
+        id = id.substr(0, len);
+        window.location.href = 'lyric.html?name=' + audioInf.songname + '&author=' + audioInf.author + '&picUrl=' + audioInf.picUrl + '&id=' + id;
+    })
+    ran.addEventListener('click', function () {
+        if (this.style.backgroundPosition == "-3px -344px") {
+            this.style.backgroundPosition = '-66px -248px';
+        } else {
+            this.style.backgroundPosition = '-3px -344px';
+        }
+    })
     audio.addEventListener('ended', function () {
-        btns.children[2].click();
+        if (ran.style.backgroundPosition == "-66px -248px") {
+            let num = Math.floor(Math.random() * audioList.length);
+            if (num != audio.length) {
+                startPlay(audioList, num)
+            } else {
+                btns.children[2].click();
+            }
+        } else {
+            btns.children[2].click();
+        }
+    })
+    setTimeout(function () {
+        if (audio.readyState != 4) {
+            massage.querySelector('span').innerHTML = '歌曲无法播放，自动播放下一首';
+            document.querySelector('.massage-container').style.display = 'flex';
+            massage.className = 'massage move-in';
+            btns.children[2].click();
+            setTimeout(function () {
+                massage[0].className = 'massage move-out';
+            }, 3000)
+            massage.querySelector('.close').onclick = function () {
+                this.parentNode.className = 'massage move-out';
+            }
+        } else {
+            document.querySelector('.massage-container').style.display = 'none';
+        }
+    }, 3500)
+}
+function logout() {
+    let login = document.querySelector('.header-top').querySelector('.login');
+    let avatar = login.querySelector('.avatar');
+    let logout = avatar.querySelector('.logout');
+    let a = logout.querySelector('a');
+    a.addEventListener('click', function () {
+        if (sessionStorage.getItem('phone')) {
+            sessionStorage.removeItem('phone');
+            sessionStorage.removeItem('password');
+            sessionStorage.removeItem('uid');
+            location.reload(true);
+        }
     })
 }
-
-//退出登录
-// let logout = avatar.querySelector('.logout');
-// let a = logout.querySelector('a');
-// a.addEventListener('click', function () {
-//     
-// ajax({
-//     type: 'get',
-//     url: 'http://musicapi.leanapp.cn/logout',
-//     success: function (responseText, xhr) {
-//         avatar.style.display = 'none';
-//         img.src = '';
-//         login_btn.style.display = 'block';
-//         console.log(responseText);
-//     },
-//     error: function (responseText, xhr) {
-//         console.log(responseText);
-//     }
-// })
-// })
 window.addEventListener('load', function () {
     volume();
+    login();
     progressbar();
     playPause();
+    logout();
 })
 
 
